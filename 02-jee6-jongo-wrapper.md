@@ -54,6 +54,25 @@ cd d:\atelier\sources\book-angular
 mvn clean install
 ```
 
+## Deploiment
+
+- Décompresser jboss dans le dossier d:\atelier\jboss
+
+- Copier le war généré (d:\atelier\sources\book-angular\target\book-angular.war) dans le dossier d:\atelier\jboss\standalone\deployments
+
+- Lancer JBOSS
+
+```
+cd d:\atelier\jboss\bin
+standalone.bat
+```
+
+- Tester l'application avec un navigateur
+
+```
+http://localhost:8080/book-angular
+```
+
 ## Quelques indications pour faire la migration de l'application book-angular vers une base MongoDB
 
 - Dépendances à rajouter dans le pom.xml

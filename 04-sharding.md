@@ -1,3 +1,0 @@
-# Sharding
-
-en cours..

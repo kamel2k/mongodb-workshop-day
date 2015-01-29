@@ -24,6 +24,18 @@ friends.find(new BasicDBObject("age",new BasicDBObject("$gt",18)))
 friends.find("{age: {$gt: 18}}").as(Friend.class)
 ```
 
+## Préparation de la base MongoDB
+
+- Décompresser l'archive mongodb-win32-x86_64-2008plus-2.6.7.zip dans le dossier d:\atelier\standalone
+
+- Créer le dossier d:\atelier\standalone\data
+
+- Lancer MongoDB avec la commande
+
+```
+cd d:\atelier\standalone\bin
+mongod --dbpath d:\atelier\standalone\data
+```
 
 ## Quelques indications pour faire la migration de l'application book-angular vers une base MongoDB
 

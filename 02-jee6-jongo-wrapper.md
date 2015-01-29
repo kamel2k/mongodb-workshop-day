@@ -34,7 +34,7 @@ friends.find("{age: {$gt: 18}}").as(Friend.class)
 
 ```
 cd d:\atelier\standalone\bin
-mongod --dbpath d:\atelier\standalone\data
+mongod.exe --dbpath d:\atelier\standalone\data
 ```
 
 ## Checkout de l'application blanche

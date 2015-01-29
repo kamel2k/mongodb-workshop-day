@@ -1,5 +1,29 @@
 # JEE6 & Jongo Wrapper
 
+## Présentation de jongo
+
+[jongo](http://www.jongo.org) est un framework opensource qui permet de requêter sur une base mongoDB à la façon shell et convertir le résultat en objets Java (API Jackson par défaut).
+
+Exemple :
+
+- SHELL
+
+```
+db.friends.find({age: {$gt: 18}})
+```
+
+- JAVA DRIVER
+
+```
+friends.find(new BasicDBObject("age",new BasicDBObject("$gt",18)))
+```
+
+- JONGO
+
+```
+friends.find("{age: {$gt: 18}}").as(Friend.class)
+```
+
 
 ## Quelques indications pour faire la migration de l'application book-angular vers une base MongoDB
 

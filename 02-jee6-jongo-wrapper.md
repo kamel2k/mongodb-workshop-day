@@ -37,6 +37,24 @@ cd d:\atelier\standalone\bin
 mongod --dbpath d:\atelier\standalone\data
 ```
 
+## Checkout de l'application blanche
+
+- lancer la commande git suivante
+
+```
+mkdir d:\atelier\sources
+cd d:\atelier\sources
+git clone -b book-angular-sql https://github.com/kamel2k/mongodb-workshop-day.git book-angular
+```
+
+## Compilation
+
+```
+cd d:\atelier\sources\book-angular
+mvn clean install
+```
+
+
 ## Quelques indications pour faire la migration de l'application book-angular vers une base MongoDB
 
 - Dépendances à rajouter dans le pom.xml

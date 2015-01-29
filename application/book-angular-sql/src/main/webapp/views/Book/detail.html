@@ -1,0 +1,44 @@
+<header ng-switch on="$location.path().indexOf('/Books/new') > -1">
+    <h3 ng-switch-when="true">Create a new Book</h3>
+    <h3 ng-switch-when="false">View or edit Book</h3>
+</header>
+<form id="BookForm" name="BookForm" class="form-horizontal" role="form">
+    <div ng-show="displayError" class="alert alert-danger">
+        <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
+    </div>
+    
+
+    <div class="form-group" ng-class="{'has-error': BookForm.isbn.$invalid}">
+        <label for="isbn" class="col-sm-2 control-label">Isbn</label>
+        <div id="isbnControls" class="col-sm-10">
+            <input id="isbn" name="isbn" type="text" requiredclass="form-control" ng-model="book.isbn" placeholder="Enter the Book Isbn"></input>
+            <span class="help-block error" ng-show="BookForm.isbn.$error.required">required</span> 
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': BookForm.title.$invalid}">
+        <label for="title" class="col-sm-2 control-label">Title</label>
+        <div id="titleControls" class="col-sm-10">
+            <input id="title" name="title" type="text" requiredclass="form-control" ng-model="book.title" placeholder="Enter the Book Title"></input>
+            <span class="help-block error" ng-show="BookForm.title.$error.required">required</span> 
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': BookForm.pages.$invalid}">
+        <label for="pages" class="col-sm-2 control-label">Pages</label>
+        <div id="pagesControls" class="col-sm-10">
+            <input id="pages" name="pages" type="number" min="1"class="form-control" ng-model="book.pages" placeholder="Enter the Book Pages"></input>
+            <span class="help-block error" ng-show="BookForm.pages.$error.number">not a number</span>
+            <span class="help-block error" ng-show="BookForm.pages.$error.min">minimum allowed is 1</span>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="saveBook" name="saveBook" class="btn btn-primary" ng-disabled="isClean() || BookForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deleteBook" name="deleteBook" class="btn btn-danger" ng-show="book.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>

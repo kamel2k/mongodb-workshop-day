@@ -54,7 +54,6 @@ cd d:\atelier\sources\book-angular
 mvn clean install
 ```
 
-
 ## Quelques indications pour faire la migration de l'application book-angular vers une base MongoDB
 
 - Dépendances à rajouter dans le pom.xml

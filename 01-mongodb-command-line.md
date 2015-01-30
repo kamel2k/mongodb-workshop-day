@@ -110,6 +110,18 @@ switched to db bookangular
 > db.books.find( {"isbn":"9782212120615"} );
 ```
 
+- Pour retrouver le nombre de résultat de la reqûete 
+
+```
+> db.books.find( {"isbn":"9782212120615"} ).count();
+```
+
+- Pagination
+
+```
+> db.books.find().limit(5).skip(2);
+```
+
 
 > Refaire les mêmes opérations avec la collection "authors"
 
